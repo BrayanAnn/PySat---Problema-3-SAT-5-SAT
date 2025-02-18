@@ -46,12 +46,12 @@ def gerar_grafico_probabilidade(n, k, list_p, valores_alpha):
     fig, ax = plt.subplots()
     plt.title(f"Grafico de probabilidade_{k}-SAT_N={n}")
     ax.plot(valores_alpha, list_p)
-    fig.savefig(f"IMAGES/PROBABILIDADE/{k}-SAT_N={n}")
+    fig.savefig(f"IMAGES/PROBABILIDADE/PROBABILIDADE_{k}-SAT_N={n}")
     plt.show()
 
 def gerar_grafico_tempo(n, k, valores_alpha, t):
     fig, ax = plt.subplots()
     plt.title(f"Grafico de tempo_{k}-SAT_N={n}")
     ax.plot(valores_alpha, t)
-    fig.savefig(f"IMAGES/TEMPO/{k}-SAT_N={n}")
+    fig.savefig(f"IMAGES/TEMPO/TEMPO_{k}-SAT_N={n}")
     plt.show()
