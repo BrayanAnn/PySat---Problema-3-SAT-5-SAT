@@ -65,7 +65,7 @@ def gerar_graficos_totais_p(k, valores_alpha, lista_total):
         n_values = [10,20,30,40,50,60]
     elif k==3:
         n_values = [50, 100, 150, 200]
-    # Adiciona cada lista de probabilidades ao gráfico
+
     for i, list_p in enumerate(lista_total):
         ax.plot(valores_alpha, list_p, label=f'N={n_values[i]}')
     
@@ -86,12 +86,12 @@ def gerar_graficos_totais_t(k, valores_alpha, lista_total):
         n_values = [10,20,30,40,50,60]
     elif k==3:
         n_values = [50, 100, 150, 200]
-    # Adiciona cada lista de probabilidades ao gráfico
-        for i, list_t in enumerate(lista_total):
-            ax.plot(valores_alpha, list_t, label=f'N={n_values[i]}')
+    
+    for i, list_t in enumerate(lista_total):
+        ax.plot(valores_alpha, list_t, label=f'N={n_values[i]}')
     
     ax.set_xlabel('Alpha (m/n)')
-    ax.set_ylabel('Tempo')
+    ax.set_ylabel('Tempo (s)')
     ax.legend()
     ax.grid(True)
     
