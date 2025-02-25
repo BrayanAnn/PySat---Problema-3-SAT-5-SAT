@@ -55,3 +55,47 @@ def gerar_grafico_tempo(n, k, valores_alpha, t):
     ax.plot(valores_alpha, t)
     fig.savefig(f"IMAGES/TEMPO/TEMPO_{k}-SAT_N={n}")
     plt.show()
+
+
+def gerar_graficos_totais_p(k, valores_alpha, lista_total):
+    fig, ax = plt.subplots()
+    plt.title(f"Grafico de probabilidade de satisfazibilidade para {k}-SAT")
+    
+    if k==5:
+        n_values = [10,20,30,40,50,60]
+    elif k==3:
+        n_values = [50, 100, 150, 200]
+    # Adiciona cada lista de probabilidades ao gráfico
+    for i, list_p in enumerate(lista_total):
+        ax.plot(valores_alpha, list_p, label=f'N={n_values[i]}')
+    
+    ax.set_xlabel('Alpha (m/n)')
+    ax.set_ylabel('Probabilidade de Satisfazibilidade')
+    ax.legend()
+    ax.grid(True)
+    
+    fig.savefig(f"IMAGES/PROBABILIDADE/PROBABILIDADE_TOTAL_{k}-SAT.png")
+    plt.show()
+
+
+def gerar_graficos_totais_t(k, valores_alpha, lista_total):
+    fig, ax = plt.subplots()
+    plt.title(f"Grafico de tempo {k}-SAT")
+    
+    if k==5:
+        n_values = [10,20,30,40,50,60]
+    elif k==3:
+        n_values = [50, 100, 150, 200]
+    # Adiciona cada lista de probabilidades ao gráfico
+        for i, list_t in enumerate(lista_total):
+            ax.plot(valores_alpha, list_t, label=f'N={n_values[i]}')
+    
+    ax.set_xlabel('Alpha (m/n)')
+    ax.set_ylabel('Tempo')
+    ax.legend()
+    ax.grid(True)
+    
+    fig.savefig(f"IMAGES/TEMPO/TEMPO_TOTAL_{k}-SAT.png")
+    plt.show()
+
+
